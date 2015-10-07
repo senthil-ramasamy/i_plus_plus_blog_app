@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<center><h2>Listing Todocontents</h2></center>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Done ? </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todocontents.each do |todocontent| %>
+      <tr>
+        <td><%= todocontent.name %></td>
+        <td><%= link_to 'Finsished ?', todocontent, method: :delete, data: { confirm: 'Are you sure you finsihed it ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<center>
+<%= link_to 'New Todo !', new_todocontent_path %>
+</center>

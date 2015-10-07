@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'no': 
+  cont: 
+  dat: 2015-10-07 11:54:50
+
+two:
+  'no': 
+  cont: 
+  dat: 2015-10-07 11:54:50

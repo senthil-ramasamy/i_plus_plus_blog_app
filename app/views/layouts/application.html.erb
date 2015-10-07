@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Medium</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'bootstrap', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" style=" background-color: mani">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Medium', root_path, class: 'navbar-brand' %>
+    </div>
+    <div class="collapse navbar-collapse " style="float:right">
+      <ul class="nav navbar-nav">
+      	<% if model_signed_in? %>
+  <li><%= link_to 'Posts', posts_path %></li>
+  <li><%= link_to 'Edit account', edit_model_registration_path %></li>
+  <li><%= link_to 'Sign out', destroy_model_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%= link_to 'ToDo', todocontents_path %></li>
+  <li><%= link_to 'Sign in', new_model_session_path %></li>
+  <li><%= link_to 'Sign up', new_model_registration_path %></li>
+<% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
