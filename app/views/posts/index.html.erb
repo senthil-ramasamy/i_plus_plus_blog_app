@@ -7,12 +7,14 @@
      <div class="jumbotron">
   <h1><%= post.title %></h1>
   <h4>By: <%= post.authorname %></h4>
-  <p><%= post.body.first(100) %></p>
+  <p><%= raw(post.body.first(100)) %></p>
   <p><%= link_to 'Show', post, class:"btn btn-primary btn-lg" %></p>
 </div>
     <% end %>
 <br>
+<% if model_signed_in? %>
 <%= link_to 'New Post', new_post_path %>
+<% end %>
 </div>
 <div class="col-md-3">
   <h3> Recent Articles : </h3>
